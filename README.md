@@ -6,7 +6,7 @@
 
 ## Motivation
 
-**Phase A Result** (lqg-anec-framework): FTL is impossible in pure GR+QFT
+**Phase A Result** (https://github.com/arcticoder/lqg-macroscopic-coherence) FTL is impossible in pure GR+QFT
 - All warp metrics violate ANEC and/or Quantum Inequalities
 - Gap is insurmountable: 10²³× QI violation margin
 
