@@ -1,49 +1,61 @@
 # Scalar-Tensor FTL Analysis (Phase B)
 
-**Status**: ⏳ ACTIVE RESEARCH (Oct 2025)  
+**Status**: ⚠️ **WEEK 1 COMPLETE - Brans-Dicke FAILED** (Oct 15, 2025)  
 **Question**: Can scalar-tensor gravity theories enable FTL without ANEC/QI violations?  
-**Timeline**: 4-6 weeks (mid-November 2025 target)
+**Timeline**: 3-4 weeks remaining (Nov 2025 decision)
+
+## Week 1 Result: Brans-Dicke FAILED ❌
+
+**Finding**: BD scalar field response to warp bubble is **catastrophic** (23 orders of magnitude too strong)
+
+### The Problem
+- Warp bubble requires: T ~ 10³⁷-10³⁹ J/m³
+- BD coupling (ω = 50,000): α = 8πG/(3+2ω) ≈ 1.68×10⁻¹⁴
+- Scalar perturbation: **δφ/φ₀ ~ -10²³** (φ goes entirely negative!)
+- Result: G_eff = G/φ < 0 (unphysical gravitational repulsion)
+
+### Why This Matters
+Even with ω far above Cassini bound (40,000), the scalar field cannot screen warp stress-energy. Would need ω ~ 10²⁰ for suppression, but:
+- Cassini constraint: ω > 40,000
+- Gap: **16 orders of magnitude**
+- Increasing ω → GR (defeats purpose of BD)
+
+**Conclusion**: Brans-Dicke cannot enable FTL warp drives.
+
+**Details**: See [`docs/week1_bd_results.md`](docs/week1_bd_results.md)
+
+---
 
 ## Motivation
 
-**Phase A Result** (https://github.com/arcticoder/lqg-macroscopic-coherence) FTL is impossible in pure GR+QFT
+**Phase A Result** ([lqg-anec-framework](https://github.com/arcticoder/lqg-macroscopic-coherence)): FTL is impossible in pure GR+QFT
 - All warp metrics violate ANEC and/or Quantum Inequalities
 - Gap is insurmountable: 10²³× QI violation margin
 
 **Phase B Question**: Can scalar-tensor theories provide "screening"?
 
 Scalar-tensor theories modify GR through scalar field φ(x):
-- Brans-Dicke: G_eff → G/φ (variable gravitational constant)
-- Horndeski: Most general scalar-tensor with second-order equations
-- DHOST: Degenerate higher-order scalar-tensor theories
+- ~~Brans-Dicke~~: G_eff → G/φ (variable gravitational constant) → **FAILED** ❌
+- Horndeski: Most general scalar-tensor with second-order equations → **TESTING NEXT**
+- DHOST: Degenerate higher-order scalar-tensor theories → *If Horndeski shows promise*
 
-**Hypothesis**: Scalar field might screen negative energy or modify ANEC
+**Hypothesis**: Scalar field screening mechanisms might suppress negative energy
 
 ## Research Plan
 
-### Week 1-2: Brans-Dicke Theory
+### ~~Week 1-2~~: Brans-Dicke Theory → **COMPLETE (FAILED)**
 
-**Goal**: Test whether variable G_eff = G/φ helps FTL
+**Result**: Scalar field perturbation δφ ~ -10²³ × φ₀ for realistic warp bubble
 
-**Framework**:
-```
-Action: S = ∫ [φR - ω/φ (∇φ)² + L_matter] √-g d⁴x
+- ✅ Implemented BD field equations
+- ✅ Dynamic φ(r_s) solver (Green's function method)
+- ✅ Coupled to Alcubierre metric
+- ❌ **φ goes negative → unphysical G_eff < 0**
+- ❌ **No parameter choice can fix 23 OOM gap**
 
-Modified Einstein equations:
-G_μν = (8πG/φ) T_μν + T_μν^(scalar)
+**Conclusion**: BD cannot screen warp stress-energy. Proceeding to Horndeski.
 
-Scalar field equation:
-□φ = (8πG/(3+2ω)) T
-```
-
-**Tests**:
-1. Alcubierre metric with dynamic φ(r_s, t)
-2. ANEC computation with scalar contribution
-3. QI bounds with φ-field fluctuations
-
-**Expected Result**: Likely still violates (scalar adds T_μν^(scalar) but doesn't change sign)
-
-### Week 3-4: Horndeski Theory
+### Week 2-3: Horndeski Theory
 
 **Goal**: Test most general scalar-tensor with screening
 
